@@ -9,8 +9,8 @@ android {
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "2"
 
         setProperty("archivesBaseName", "imageviewer")
     }
@@ -19,7 +19,7 @@ android {
 dependencies {
     api 'androidx.appcompat:appcompat:1.2.0'
     api 'androidx.transition:transition:1.3.1'
-    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+    api 'com.github.chrisbanes:PhotoView:2.3.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
@@ -38,7 +38,7 @@ publishing {
         aar(MavenPublication) {
             groupId = "ua.tiras"
             artifactId = archivesBaseName
-            version = "1.0.0-SNAPSHOT"
+            version = "1.0.1-SNAPSHOT"
             artifact("$buildDir/outputs/aar/$archivesBaseName-release.aar")
             artifact(sourceJar)
 
