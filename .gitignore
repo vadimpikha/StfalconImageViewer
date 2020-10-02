@@ -34,3 +34,4 @@ android/proguard/
 .idea/
 build/
 .gradle
+/imageviewer/gradle.properties

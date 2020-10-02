@@ -29,7 +29,7 @@ internal class BuilderData<T>(
 ) {
     var backgroundColor = Color.BLACK
     var startPosition: Int = 0
-    var imageChangeListener: OnImageChangeListener? = null
+    var imageChangeListener: OnImageChangeListener<T>? = null
     var onDismissListener: OnDismissListener? = null
     var overlayView: View? = null
     var imageMarginPixels: Int = 0

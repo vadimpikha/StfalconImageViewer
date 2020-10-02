@@ -14,9 +14,10 @@ class MainActivityPagerAdapter(
 
     companion object {
         const val ID_IMAGES_GRID = 0
-        const val ID_SCROLL = 1
-        const val ID_STYLING = 2
-        const val ID_ROTATION = 3
+        const val ID_SCALED_IMAGES_GRID = 1
+        const val ID_SCROLL = 2
+        const val ID_STYLING = 3
+        const val ID_ROTATION = 4
     }
 
     override fun getItem(position: Int): Fragment {
@@ -26,6 +27,10 @@ class MainActivityPagerAdapter(
             ID_IMAGES_GRID -> {
                 title = context.getString(R.string.action_images_grid)
                 description = context.getString(R.string.description_images_grid)
+            }
+            ID_SCALED_IMAGES_GRID -> {
+                title = context.getString(R.string.action_scaled_images_grid)
+                description = context.getString(R.string.description_scaled_images_grid)
             }
             ID_SCROLL -> {
                 title = context.getString(R.string.action_scroll)
@@ -43,5 +48,5 @@ class MainActivityPagerAdapter(
         return DemoCardFragment.newInstance(position, title, description)
     }
 
-    override fun getCount() = 4
+    override fun getCount() = 5
 }

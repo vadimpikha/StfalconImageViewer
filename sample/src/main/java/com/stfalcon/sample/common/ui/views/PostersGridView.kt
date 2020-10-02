@@ -10,7 +10,7 @@ import com.stfalcon.sample.common.models.Demo
 import com.stfalcon.sample.common.models.Poster
 import kotlinx.android.synthetic.main.view_posters_grid.view.*
 
-class PostersGridView @JvmOverloads constructor(
+open class PostersGridView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
@@ -33,6 +33,10 @@ class PostersGridView @JvmOverloads constructor(
     }
 
     init {
+       inflateView()
+    }
+
+    protected open fun inflateView() {
         View.inflate(context, R.layout.view_posters_grid, this)
     }
 

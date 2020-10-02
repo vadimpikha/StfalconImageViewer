@@ -43,7 +43,7 @@ public class StfalconImageViewer<T> {
     protected StfalconImageViewer(@NonNull Context context, @NonNull BuilderData<T> builderData) {
         this.context = context;
         this.builderData = builderData;
-        this.dialog = new ImageViewerDialog<>(context, builderData);
+        this.dialog = new ImageViewerDialog<>(context, builderData, this);
     }
 
     /**
@@ -283,7 +283,7 @@ public class StfalconImageViewer<T> {
          *
          * @return This Builder object to allow calls chaining
          */
-        public Builder<T> withImageChangeListener(OnImageChangeListener imageChangeListener) {
+        public Builder<T> withImageChangeListener(OnImageChangeListener<T> imageChangeListener) {
             this.data.setImageChangeListener(imageChangeListener);
             return this;
         }

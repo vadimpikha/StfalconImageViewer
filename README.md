@@ -9,45 +9,9 @@ Based on [PhotoView](https://github.com/chrisbanes/PhotoView) by [chrisbanes](ht
 
 ![alt tag](images/image_viewer_main_demo.gif) ![alt tag](images/image_viewer_transition_demo.gif)
 
-### Who we are
-Need iOS and Android apps, MVP development or prototyping? Contact us via info@stfalcon.com. We develop software since 2009, and we're known experts in this field. Check out our [portfolio](https://stfalcon.com/en/portfolio) and see more libraries from [stfalcon-studio](https://stfalcon-studio.github.io/).
-
 ### Requirements
 * A project configured with the AndroidX
 * SDK 19 and and higher
-
-### Demo Application
-[![Get it on Google Play](https://play.google.com/intl/en_us/badges/images/badge_new.png)](https://play.google.com/store/apps/details?id=com.stfalcon.stfalconimageviewersample)
-
-### Install
-Download via **Gradle**:
-
-Add this to the **project `build.gradle`** file:
-```gradle
-allprojects {
-    repositories {
-        ...
-        maven { url "https://jitpack.io" }
-    }
-}
-```
-
-And then add the dependency to the **module `build.gradle`** file:
-```gradle
-implementation 'com.github.stfalcon:stfalcon-imageviewer:latest_version'
-```
-
-Download via **Maven**:
-```
-<dependency>
-  <groupId>com.github.stfalcon</groupId>
-  <artifactId>stfalcon-imageviewer</artifactId>
-  <version>latest_version</version>
-  <type>pom</type>
-</dependency>
-```
-
-Where the `latest_version` is the value from `Download` badge.
 
 ### Usage
 #### Simple usage

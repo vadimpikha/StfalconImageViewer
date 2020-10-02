@@ -11,11 +11,11 @@ import com.stfalcon.sample.common.models.Demo
 import com.stfalcon.sample.common.models.Poster
 import kotlinx.android.synthetic.main.activity_demo_posters_grid.*
 
-class PostersGridDemoActivity : AppCompatActivity() {
+class ScaledPostersGridDemoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_demo_posters_grid)
+        setContentView(R.layout.activity_demo_scaled_posters_grid)
 
         postersGridView.apply {
             imageLoader = ::loadPosterImage

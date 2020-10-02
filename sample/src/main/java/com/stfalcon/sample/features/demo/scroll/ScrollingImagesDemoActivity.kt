@@ -14,21 +14,19 @@ class ScrollingImagesDemoActivity : AppCompatActivity() {
 
     private val horizontalImageViews by lazy {
         listOf(
-            scrollingHorizontalFirstImage,
-            scrollingHorizontalSecondImage,
-            scrollingHorizontalThirdImage,
-            scrollingHorizontalFourthImage)
+                scrollingHorizontalFirstImage,
+                scrollingHorizontalSecondImage,
+                scrollingHorizontalThirdImage,
+                scrollingHorizontalFourthImage)
     }
 
     private val verticalImageViews by lazy {
         listOf(
-            scrollingVerticalFirstImage,
-            scrollingVerticalSecondImage,
-            scrollingVerticalThirdImage,
-            scrollingVerticalFourthImage)
+                scrollingVerticalFirstImage,
+                scrollingVerticalSecondImage,
+                scrollingVerticalThirdImage,
+                scrollingVerticalFourthImage)
     }
-
-    private lateinit var viewer: StfalconImageViewer<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,15 +48,18 @@ class ScrollingImagesDemoActivity : AppCompatActivity() {
     }
 
     private fun openViewer(
-        startPosition: Int,
-        target: ImageView,
-        images: List<String>,
-        imageViews: List<ImageView>) {
-        viewer = StfalconImageViewer.Builder<String>(this, images, ::loadImage)
-            .withStartPosition(startPosition)
-            .withTransitionFrom(target)
-            .withImageChangeListener { viewer.updateTransitionImage(imageViews.getOrNull(it)) }
-            .show()
+            startPosition: Int,
+            target: ImageView,
+            images: List<String>,
+            imageViews: List<ImageView>) {
+
+        StfalconImageViewer.Builder(this, images, ::loadImage)
+                .withStartPosition(startPosition)
+                .withTransitionFrom(target)
+                .withImageChangeListener { viewer, pos ->
+                    viewer.updateTransitionImage(imageViews.getOrNull(pos))
+                }
+                .show()
     }
 
     private fun loadImage(imageView: ImageView, url: String?) {
